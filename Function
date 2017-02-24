@@ -1,0 +1,12 @@
+def vina_file_create(size_x, size_y, size_z, center_x, center_y, center_z, energy_range, file_path = "D://example/",receptor = "p2x4.pdbqt",ligand ="sinomenine.pabqt"):
+    # dock_file'name like :vina_receptor_lignad.txt
+    file_full_path = file_path + "vina_" + receptor[:-6] +"_" + ligand[:-6] + ".txt"
+    file = open(file_full_path, "w")
+    #begin writting dock_file:such command lines includ read receptor and ligand files, center_x,y,z and size_x,y,z command lines,finally out and log command lines
+    file.write("receptor = "+ receptor + "\n" + "ligand = "+ ligand +"\n" +"\n" + "size_x = "+ size_x +"\n" + "size_y = "+ size_y +"\n" + "size_z = "+ size_z +"\n" +"\n")
+    file.write("center_x = " + center_x +"\n"  + "center_y = " + center_y +"\n" + "center_z = " + center_z +"\n" +"\n" + "energy_range = " + energy_range +"\n" +"\n")
+    file.write("out = " + receptor[:-6] +"_" + ligand[:-6] + ".pdbqt" +"\n")
+    file.write("log = " + "log_" + receptor[:-6] +"_" + ligand[:-6] + ".log")
+    file.close()
+    #make sure this work is over
+    print("done")
